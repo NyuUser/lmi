@@ -56,7 +56,7 @@ while ($row = $result->fetch_assoc()) {
         $prevTercde = $row["tercde"];
     } else {
         echo "<tr>
-        <td>{$row["tercde"]}</td>
+        <td></td>
         <td>{$row["custcde"]}</td>
         <td>{$row["trntot"]}</td>
         </tr>";

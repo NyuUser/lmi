@@ -118,6 +118,32 @@ INSERT INTO `prob4` VALUES (1,'2024-12-01 00:00:00',12,2024,'F'),(2,'1999-10-31 
 UNLOCK TABLES;
 
 --
+-- Table structure for table `prob5`
+--
+
+DROP TABLE IF EXISTS `prob5`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `prob5` (
+  `recid` int(11) NOT NULL AUTO_INCREMENT,
+  `field1` varchar(255) NOT NULL,
+  `field2` varchar(255) NOT NULL,
+  `field3` varchar(255) NOT NULL,
+  PRIMARY KEY (`recid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prob5`
+--
+
+LOCK TABLES `prob5` WRITE;
+/*!40000 ALTER TABLE `prob5` DISABLE KEYS */;
+INSERT INTO `prob5` VALUES (1,'1','2','3'),(3,'1','2','2');
+/*!40000 ALTER TABLE `prob5` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `territoryfile`
 --
 
@@ -148,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-20 11:55:15
+-- Dump completed on 2024-02-20 13:44:33

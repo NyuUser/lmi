@@ -37,6 +37,25 @@ function addCust() {
   $('#tercde').val('')
 }
 
+function editCustomer(custcde, tercde, cusdsc) {
+  console.log(custcde, tercde, cusdsc)
+
+  $("#editcustcde").val(custcde);
+  $("#edittercde").val(tercde);
+  $("#editcusdsc").val(cusdsc);
+  $("#editPopup").show();
+}
+
+function updateCustomer() {
+  var formData = $("#editForm").serialize();
+  $.post("custprocess.php", formData, function (data, status) {
+    // Refresh the character list after adding
+    alert("Data: " + data + "\nStatus: " + status);
+    loadCharacterList();
+    closePopup();
+  });
+}
+
 function loadSalesList() {
   $.get("sales.php", function (data) {
     $("#salesTable").html(data);

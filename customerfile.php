@@ -12,7 +12,8 @@ if ($conn->connect_error) {
 
 $sql = "CREATE TABLE IF NOT EXISTS customerfile (
     custcde VARCHAR(255) NOT NULL,
-    tercde VARCHAR(255) NOT NULL
+    tercde VARCHAR(255) NOT NULL,
+    cusdsc VARCHAR(255) NOT NULL
 )";
 $conn->query($sql);
 

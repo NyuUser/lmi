@@ -14,7 +14,7 @@ $sql = "CREATE TABLE IF NOT EXISTS lmi_entrance_exam (
     docnum INT AUTO_INCREMENT PRIMARY KEY,
     trndte DATETIME NOT NULL,
     custcde VARCHAR(255) NOT NULL,
-    trntot INT NOT NULL,
+    trntot INT NOT NULL
 )";
 $conn->query($sql);
 

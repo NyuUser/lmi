@@ -44,6 +44,7 @@
         <h3>Add a Customer</h3>
         <label>custcde: </label><input id="custcde" type="text" name="custcde" required><br>
         <label>tercde: </label><input id="tercde" type="text" name="tercde" required><br>
+        <label>cusdsc: </label><input id="cusdsc" type="text" name="cusdsc" required><br>
         <input name="add" value="Add" onclick="addCust()">
     </form>
 
@@ -54,6 +55,17 @@
     <table id="prob2">
 
     </table>
+
+    <div class="popup" id="editPopup">
+        <h3>Edit a Customer</h3>
+        <form id="editForm">
+            <label>custcde: </label><input id="editcustcde" type="text" name="custcde" required><br>
+            <label>tercde: </label><input id="edittercde" type="text" name="tercde" required><br>
+            <label>cusdsc: </label><input id="editcusdsc" type="text" name="cusdsc" required><br>
+            <input name="update" value="Update" onclick="updateCustomer()">
+            <button type="button" onclick="closePopup()">Cancel</button>
+        </form>
+    </div>
 </body>
 
 </html>

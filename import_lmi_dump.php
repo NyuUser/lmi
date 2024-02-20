@@ -6,7 +6,7 @@ $password = "";
 $dbname = "lmi_entrance_exam";
 
 // MySQL dump file path
-$dumpFilePath = "C:/xampp/htdocs/lmi-main/lmi.sql";
+$dumpFilePath = "C:/xampp/htdocs/lmi/lmi.sql";
 // Create a new mysqli connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 

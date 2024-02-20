@@ -18,11 +18,18 @@ $result = $conn->query($sql);
 echo "<tr>
 <th>Customer</th>
 <th>Territory</th>
+<th>Description</th>
+<th>Actions</th>
 </tr>";
 while ($row = $result->fetch_assoc()) {
     echo "<tr>
     <td>{$row["custcde"]}</td>
     <td>{$row["tercde"]}</td>
+    <td>{$row["cusdsc"]}</td>
+    <td>
+    <button onclick=\"editCustomer('{$row['custcde']}', '{$row['tercde']}', '{$row['cusdsc']}')\">Edit</button>
+    <button onclick=\"deleteCustomer({$row['custcde']})\">Delete</button>
+    </td>
     </tr>";
 }
 

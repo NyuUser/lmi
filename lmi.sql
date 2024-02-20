@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `customerfile`
+--
+
+DROP TABLE IF EXISTS `customerfile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customerfile` (
+  `custcde` varchar(255) NOT NULL,
+  `tercde` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customerfile`
+--
+
+LOCK TABLES `customerfile` WRITE;
+/*!40000 ALTER TABLE `customerfile` DISABLE KEYS */;
+INSERT INTO `customerfile` VALUES ('custcde0001','CALOOCAN'),('custcde0002','CALOOCAN'),('custcde0003','MALABON'),('custcde0004','NAVOTAS');
+/*!40000 ALTER TABLE `customerfile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `lmi_entrance_exam`
 --
 
@@ -28,7 +51,7 @@ CREATE TABLE `lmi_entrance_exam` (
   `custcde` varchar(255) NOT NULL,
   `trntot` int(11) NOT NULL,
   PRIMARY KEY (`docnum`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,8 +60,30 @@ CREATE TABLE `lmi_entrance_exam` (
 
 LOCK TABLES `lmi_entrance_exam` WRITE;
 /*!40000 ALTER TABLE `lmi_entrance_exam` DISABLE KEYS */;
-INSERT INTO `lmi_entrance_exam` VALUES (1,'2024-02-19 00:00:00','custcde0001',1000),(2,'2024-02-01 00:00:00','custcde0002',1234),(3,'2024-02-22 00:00:00','custcde0001',4321),(4,'2024-02-03 00:00:00','custcde0003',111);
+INSERT INTO `lmi_entrance_exam` VALUES (1,'2024-02-19 00:00:00','custcde0001',1000),(2,'2024-02-01 00:00:00','custcde0002',1234),(3,'2024-02-22 00:00:00','custcde0001',4321),(4,'2024-02-03 00:00:00','custcde0003',111),(5,'2024-03-01 00:00:00','custcde0004',1111);
 /*!40000 ALTER TABLE `lmi_entrance_exam` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `territoryfile`
+--
+
+DROP TABLE IF EXISTS `territoryfile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `territoryfile` (
+  `tercde` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `territoryfile`
+--
+
+LOCK TABLES `territoryfile` WRITE;
+/*!40000 ALTER TABLE `territoryfile` DISABLE KEYS */;
+INSERT INTO `territoryfile` VALUES ('CALOOCAN'),('NAVOTAS'),('MALABON');
+/*!40000 ALTER TABLE `territoryfile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +95,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-19 17:06:14
+-- Dump completed on 2024-02-20  8:16:08

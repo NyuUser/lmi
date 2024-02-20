@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `customerdesc`
+--
+
+DROP TABLE IF EXISTS `customerdesc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customerdesc` (
+  `custcde` varchar(255) NOT NULL,
+  `cusdsc` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customerdesc`
+--
+
+LOCK TABLES `customerdesc` WRITE;
+/*!40000 ALTER TABLE `customerdesc` DISABLE KEYS */;
+INSERT INTO `customerdesc` VALUES ('cust1','customer 1'),('cust2','customer 2'),('cust3','customer 3');
+/*!40000 ALTER TABLE `customerdesc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `customerfile`
 --
 
@@ -35,7 +58,7 @@ CREATE TABLE `customerfile` (
 
 LOCK TABLES `customerfile` WRITE;
 /*!40000 ALTER TABLE `customerfile` DISABLE KEYS */;
-INSERT INTO `customerfile` VALUES ('cust1','Malabon','customer 1'),('cust2','Navotas','customer 2'),('cust3','Caloocan','customer 3');
+INSERT INTO `customerfile` VALUES ('cust1','Malabon','customer 1'),('cust2','Navotas','customer 2'),('cust3','Caloocan','');
 /*!40000 ALTER TABLE `customerfile` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,6 +88,33 @@ LOCK TABLES `lmi_entrance_exam` WRITE;
 /*!40000 ALTER TABLE `lmi_entrance_exam` DISABLE KEYS */;
 INSERT INTO `lmi_entrance_exam` VALUES (1,'2024-02-20 00:00:00','cust1',1234,1,'customer 1'),(2,'2024-02-21 00:00:00','cust2',5431,2,'customer 2'),(3,'2024-02-22 00:00:00','cust3',1112,3,'customer 3'),(4,'2024-02-23 00:00:00','cust1',1111,4,'customer 1');
 /*!40000 ALTER TABLE `lmi_entrance_exam` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `prob4`
+--
+
+DROP TABLE IF EXISTS `prob4`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `prob4` (
+  `recid` int(11) NOT NULL AUTO_INCREMENT,
+  `trndte` datetime NOT NULL,
+  `cremon` int(11) NOT NULL,
+  `creyer` int(11) NOT NULL,
+  `datetyp` varchar(255) NOT NULL,
+  PRIMARY KEY (`recid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prob4`
+--
+
+LOCK TABLES `prob4` WRITE;
+/*!40000 ALTER TABLE `prob4` DISABLE KEYS */;
+INSERT INTO `prob4` VALUES (1,'2024-12-01 00:00:00',12,2024,'F'),(2,'1999-10-31 00:00:00',10,1999,'L'),(3,'2012-12-31 00:00:00',12,2012,'L');
+/*!40000 ALTER TABLE `prob4` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -98,4 +148,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-20 10:13:10
+-- Dump completed on 2024-02-20 11:55:15

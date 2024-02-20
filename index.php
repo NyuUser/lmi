@@ -84,6 +84,19 @@
     <table id="custTable">
         <!-- Table content will be populated dynamically using jQuery -->
     </table>
+
+    <form id="addProb4">
+        <h3>Add a For Problem 4</h3>
+        <label>cremon: </label><input id="cremon" type="number" name="cremon" required><br>
+        <label>creyer: </label><input id="creyer" type="number" name="creyer" required><br>
+        <label>datetyp: </label><input id="datetyp" type="text" name="datetyp" required><br>
+        <input name="add" value="Add" onclick="addProb4()">
+    </form>
+
+    <h3>Problem 4</h3>
+    <table id="prob4">
+        <!-- Table content will be populated dynamically using jQuery -->
+    </table>
 </body>
 
 </html>

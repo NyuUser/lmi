@@ -89,6 +89,16 @@ function addDesc() {
   $('#tercde').val('')
 }
 
+function addProb4() {
+  var formData = $('#addProb4').serialize();
+  console.log(formData)
+  $.post("prob4process.php", formData, function (data, status) {
+    // Refresh the list after adding
+    alert("Data: " + data + "\nStatus: " + status);
+    loadProb4();
+  });
+}
+
 function loadSalesList() {
   $.get("sales.php", function (data) {
     $("#salesTable").html(data);
@@ -119,6 +129,12 @@ function loadProb2() {
   });
 }
 
+function loadProb4() {
+  $.get("prob4.php", function (data) {
+    $("#prob4").html(data);
+  });
+}
+
 function closePopup() {
   $("#editPopup").hide();
 }
@@ -129,4 +145,5 @@ $(document).ready(function () {
   loadCust();
   loadDesc();
   loadProb2();
+  loadProb4();
 })

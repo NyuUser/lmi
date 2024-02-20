@@ -10,15 +10,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS lmi_entrance_exam (
-    docnum INT AUTO_INCREMENT PRIMARY KEY,
-    trndte DATETIME NOT NULL,
+$sql = "CREATE TABLE IF NOT EXISTS customerdesc (
     custcde VARCHAR(255) NOT NULL,
-    trntot INT NOT NULL,
-    recid INT NOT NULL,
-    custdsc VARCHAR(255) NOT NULL
-);";
+    cusdsc VARCHAR(255) NOT NULL
+)";
 $conn->query($sql);
 
-$sql = "SELECT * FROM lmi_entrance_exam";
+$sql = "SELECT * FROM customerfile";
 $result = $conn->query($sql);

@@ -12,11 +12,12 @@ if ($conn->connect_error) {
 }
 
 // Fetch sales data
-$sql = "SELECT * FROM lmi_entrance_exam ORDER BY custcde, trndte, docnum";
+$sql = "SELECT * FROM lmi_entrance_exam ORDER BY custcde, trndte, docnum, recid, custdsc";
 $result = $conn->query($sql);
 
 // Generate HTML for the sales list
 echo "<tr>
+<!--th>Rec ID</th-->
 <th>DATE</th>
 <th>DOC No.</th>
 <th>Amount</th>
@@ -29,6 +30,7 @@ while ($row = $result->fetch_assoc()) {
             echo "<tr>
             <td>Subtotal:</td>
             <td></td>
+            <!--td></td-->
             <td>{$total}</td>
             </tr>";
             $grandTotal += $total; // Add subtotal to grand total
@@ -37,12 +39,14 @@ while ($row = $result->fetch_assoc()) {
         // Print custcde only when it changes
         echo "<tr>
         <td>{$row["custcde"]}</td>
+        <!--td>{$row["custdsc"]}</td-->
         </tr>";
         $prevCustcde = $row["custcde"];
     }
     // Accumulate trntot for the current customer
     $total += $row["trntot"];
     echo "<tr>
+    <!--td>{$row["recid"]}</td-->
     <td>{$row["trndte"]}</td>
     <td>{$row["docnum"]}</td>
     <td>{$row["trntot"]}</td>
@@ -54,6 +58,7 @@ if ($prevCustcde !== null) {
     echo "<tr>
     <td>Subtotal:</td>
     <td></td>
+    <!--td></td-->
     <td>{$total}</td>
     </tr>";
     $grandTotal += $total; // Add last subtotal to grand total
@@ -63,6 +68,7 @@ if ($prevCustcde !== null) {
 echo "<tr>
 <td>Grand Total:</td>
 <td></td>
+<!--td></td-->
 <td>{$grandTotal}</td>
 </tr>";
 

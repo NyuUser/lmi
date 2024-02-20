@@ -20,12 +20,15 @@
 
     <form id="addForm">
         <h3>Add a Customer</h3>
-        <label>trndtw: </label><input id="trndtw" type="date" name="trndtw" required><br>
+        <label>trndte: </label><input id="trndte" type="date" name="trndte" required><br>
         <label>custcde: </label><input id="custcde" type="text" name="custcde" required><br>
         <label>trntot: </label><input id="trntot" type="number" name="trntot" required><br>
+        <!--label>recid: </label><input id="recid" type="number" name="recid" required><br>
+        <label>custdsc: </label><input id="custdsc" type="text" name="custdsc" required><br-->
         <input name="add" value="Add" onclick="addSales()">
     </form>
 
+    <h3>Problem 1</h3>
     <table id="salesTable">
         <!-- Table content will be populated dynamically using jQuery -->
     </table>
@@ -40,18 +43,9 @@
         <!-- Table content will be populated dynamically using jQuery -->
     </table>
 
-    <form id="addCust">
-        <h3>Add a Customer</h3>
-        <label>custcde: </label><input id="custcde" type="text" name="custcde" required><br>
-        <label>tercde: </label><input id="tercde" type="text" name="tercde" required><br>
-        <label>cusdsc: </label><input id="cusdsc" type="text" name="cusdsc" required><br>
-        <input name="add" value="Add" onclick="addCust()">
-    </form>
+    <br>
 
-    <table id="custTable">
-        <!-- Table content will be populated dynamically using jQuery -->
-    </table>
-
+    <h3>Problem 2</h3>
     <table id="prob2">
 
     </table>
@@ -59,13 +53,37 @@
     <div class="popup" id="editPopup">
         <h3>Edit a Customer</h3>
         <form id="editForm">
-            <label>custcde: </label><input id="editcustcde" type="text" name="custcde" required><br>
+            <label>custcde: </label><input id="editcustcde" type="text" hidden name="custcde" required><br>
             <label>tercde: </label><input id="edittercde" type="text" name="tercde" required><br>
-            <label>cusdsc: </label><input id="editcusdsc" type="text" name="cusdsc" required><br>
             <input name="update" value="Update" onclick="updateCustomer()">
             <button type="button" onclick="closePopup()">Cancel</button>
         </form>
     </div>
+
+    <form id="addCust">
+        <h3>Add a Customer</h3>
+        <label>custcde: </label><input id="custcde" type="text" name="custcde" required><br>
+        <label>tercde: </label><input id="tercde" type="text" name="tercde" required><br>
+        <input name="add" value="Add" onclick="addCust()">
+    </form>
+
+    <form id="addDesc">
+        <h3>Add a Description</h3>
+        <label>custcde: </label><input id="custcde" type="text" name="custcde" required><br>
+        <label>cusdsc: </label><input id="cusdsc" type="text" name="cusdsc" required><br>
+        <input name="add" value="Add" onclick="addDesc()">
+    </form>
+
+    <table id="descTable">
+        <!-- Table content will be populated dynamically using jQuery -->
+    </table>
+
+    <br>
+
+    <h3>Problem 3</h3>
+    <table id="custTable">
+        <!-- Table content will be populated dynamically using jQuery -->
+    </table>
 </body>
 
 </html>

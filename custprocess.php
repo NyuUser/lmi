@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // $docnum = isset($_POST["docnum"]) ? $_POST["docnum"] : "";
         $custcde = isset($_POST["custcde"]) ? $_POST["custcde"] : "";
         $tercde = isset($_POST["tercde"]) ? $_POST["tercde"] : "";
-        $cusdsc = isset($_POST["cusdsc"]) ? $_POST["cusdsc"] : "";
+        // $cusdsc = isset($_POST["cusdsc"]) ? $_POST["cusdsc"] : "";
 
-        $sql = "INSERT INTO customerfile (custcde, tercde, cusdsc) VALUES ('$custcde', '$tercde', '$cusdsc')";
+        // $sql = "INSERT INTO customerfile (custcde, tercde, cusdsc) VALUES ('$custcde', '$tercde', '$cusdsc')";
+        $sql = "INSERT INTO customerfile (custcde, tercde) VALUES ('$custcde', '$tercde')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Added successfully";
@@ -28,10 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } elseif (isset($_POST["update"])) {
         // Handle updating
+        $custcde = $_POST["custcde"];
         $tercde = $_POST["tercde"];
-        $cusdsc = $_POST["cusdsc"];
+        // $cusdsc = $_POST["cusdsc"];
 
-        $sql = "UPDATE character_file SET tercde='$tercde', cusdsc='$cusdsc' WHERE id='$custcde'";
+        // $sql = "UPDATE customerfile SET tercde='$tercde', cusdsc='$cusdsc' WHERE custcde='$custcde'";
+        $sql = "UPDATE customerfile SET tercde='$tercde' WHERE custcde='$custcde'";
         if ($conn->query($sql) === TRUE) {
             echo "Character info updated successfully";
         } else {
@@ -39,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } elseif (isset($_POST["delete"])) {
         // Handle deleting
-        $id = $_POST["id"];
-        $sql = "DELETE FROM character_file WHERE id='$id'";
+        $custcde = $_POST["custcde"];
+        $sql = "DELETE FROM customerfile WHERE custcde='$custcde'";
         if ($conn->query($sql) === TRUE) {
             echo "Character info deleted successfully";
         } else {

@@ -1,4 +1,5 @@
 <?php
+// Include database connection logic (similar to your main file)
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -13,14 +14,10 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["add"])) {
         // Handle adding
-        $trndte = isset($_POST["trndte"]) ? $_POST["trndte"] : "";
         $custcde = isset($_POST["custcde"]) ? $_POST["custcde"] : "";
-        $trntot = isset($_POST["trntot"]) ? $_POST["trntot"] : "";
-        // $recid = isset($_POST["recid"]) ? $_POST["recid"] : "";
-        // $custdsc = isset($_POST["custdsc"]) ? $_POST["custdsc"] : "";
+        $cusdsc = isset($_POST["cusdsc"]) ? $_POST["cusdsc"] : "";
 
-        // $sql = "INSERT INTO lmi_entrance_exam (trndte, custcde, trntot, recid, custdsc) VALUES ('$trndte', '$custcde', '$trntot', '$recid', '$custdsc')";
-        $sql = "INSERT INTO lmi_entrance_exam (trndte, custcde, trntot) VALUES ('$trndte', '$custcde', '$trntot')";
+        $sql = "INSERT INTO customerdesc (custcde, cusdsc) VALUES ('$custcde', '$cusdsc')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Added successfully";

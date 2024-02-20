@@ -24,7 +24,8 @@ DROP TABLE IF EXISTS `customerfile`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customerfile` (
   `custcde` varchar(255) NOT NULL,
-  `tercde` varchar(255) NOT NULL
+  `tercde` varchar(255) NOT NULL,
+  `cusdsc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -34,7 +35,7 @@ CREATE TABLE `customerfile` (
 
 LOCK TABLES `customerfile` WRITE;
 /*!40000 ALTER TABLE `customerfile` DISABLE KEYS */;
-INSERT INTO `customerfile` VALUES ('custcde0001','CALOOCAN'),('custcde0002','CALOOCAN'),('custcde0003','MALABON'),('custcde0004','NAVOTAS');
+INSERT INTO `customerfile` VALUES ('cust1','Malabon','customer 1'),('cust2','Navotas','customer 2'),('cust3','Caloocan','customer 3');
 /*!40000 ALTER TABLE `customerfile` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -50,8 +51,10 @@ CREATE TABLE `lmi_entrance_exam` (
   `trndte` datetime NOT NULL,
   `custcde` varchar(255) NOT NULL,
   `trntot` int(11) NOT NULL,
+  `recid` int(11) DEFAULT NULL,
+  `custdsc` varchar(255) NOT NULL,
   PRIMARY KEY (`docnum`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +63,7 @@ CREATE TABLE `lmi_entrance_exam` (
 
 LOCK TABLES `lmi_entrance_exam` WRITE;
 /*!40000 ALTER TABLE `lmi_entrance_exam` DISABLE KEYS */;
-INSERT INTO `lmi_entrance_exam` VALUES (1,'2024-02-19 00:00:00','custcde0001',1000),(2,'2024-02-01 00:00:00','custcde0002',1234),(3,'2024-02-22 00:00:00','custcde0001',4321),(4,'2024-02-03 00:00:00','custcde0003',111),(5,'2024-03-01 00:00:00','custcde0004',1111);
+INSERT INTO `lmi_entrance_exam` VALUES (1,'2024-02-20 00:00:00','cust1',1234,1,'customer 1'),(2,'2024-02-21 00:00:00','cust2',5431,2,'customer 2'),(3,'2024-02-22 00:00:00','cust3',1112,3,'customer 3'),(4,'2024-02-23 00:00:00','cust1',1111,4,'customer 1');
 /*!40000 ALTER TABLE `lmi_entrance_exam` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +85,7 @@ CREATE TABLE `territoryfile` (
 
 LOCK TABLES `territoryfile` WRITE;
 /*!40000 ALTER TABLE `territoryfile` DISABLE KEYS */;
-INSERT INTO `territoryfile` VALUES ('CALOOCAN'),('NAVOTAS'),('MALABON');
+INSERT INTO `territoryfile` VALUES ('Malabon'),('Navotas'),('Caloocan');
 /*!40000 ALTER TABLE `territoryfile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -95,4 +98,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-20  8:16:08
+-- Dump completed on 2024-02-20 10:13:10

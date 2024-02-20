@@ -7,9 +7,11 @@ function addSales() {
     loadSalesList();
   });
   
-  $('#trndtw').val('')
+  $('#trndte').val('')
   $('#custcde').val('')
   $('#trntot').val('')
+  //$('#recid').val('')
+  //$('#custdsc').val('')
 }
 
 function addTerr() {
@@ -31,6 +33,7 @@ function addCust() {
     // Refresh the list after adding
     alert("Data: " + data + "\nStatus: " + status);
     loadCust();
+    loadProb2();
   });
   
   $('#custcde').val('')
@@ -51,9 +54,39 @@ function updateCustomer() {
   $.post("custprocess.php", formData, function (data, status) {
     // Refresh the character list after adding
     alert("Data: " + data + "\nStatus: " + status);
-    loadCharacterList();
+    loadCust();
+    loadProb2();
     closePopup();
   });
+}
+
+function deleteCustomer(custcde) {
+  if (confirm("Are you sure you want to delete this character?")) {
+    $.post(
+      "custprocess.php",
+      { delete: true, custcde: custcde },
+      function (data, status) {
+        // Refresh the character list after adding
+        alert("Data: " + data + "\nStatus: " + status);
+        loadCust();
+        loadProb2();
+        closePopup();
+      },
+    );
+  }
+}
+
+function addDesc() {
+  var formData = $('#addDesc').serialize();
+  console.log(formData)
+  $.post("descprocess.php", formData, function (data, status) {
+    // Refresh the list after adding
+    alert("Data: " + data + "\nStatus: " + status);
+    loadCust();
+  });
+  
+  $('#custcde').val('')
+  $('#tercde').val('')
 }
 
 function loadSalesList() {
@@ -74,15 +107,26 @@ function loadCust() {
   });
 }
 
+function loadDesc() {
+  $.get("loadDesc.php", function (data) {
+    $("#descTable").html(data);
+  });
+}
+
 function loadProb2() {
   $.get("prob2.php", function (data) {
     $("#prob2").html(data);
   });
 }
 
+function closePopup() {
+  $("#editPopup").hide();
+}
+
 $(document).ready(function () {
   loadSalesList();
   loadTerr();
   loadCust();
+  loadDesc();
   loadProb2();
 })

@@ -96,6 +96,24 @@ function addProb4() {
     // Refresh the list after adding
     alert("Data: " + data + "\nStatus: " + status);
     loadProb4();
+
+    $('#cremon').val('')
+    $('#creyer').val('')
+    $('#datetyp').val('')
+  });
+}
+
+function addProb5() {
+  var formData = $('#addProb5').serialize();
+  console.log(formData)
+  $.post("prob5process.php", formData, function (data, status) {
+    // Refresh the list after adding
+    alert("Data: " + data + "\nStatus: " + status);
+    loadProb5();
+
+    $('#field1').val('')
+    $('#field2').val('')
+    $('#field3').val('')
   });
 }
 
@@ -135,6 +153,12 @@ function loadProb4() {
   });
 }
 
+function loadProb5() {
+  $.get("prob5.php", function (data) {
+    $("#prob5").html(data);
+  });
+}
+
 function closePopup() {
   $("#editPopup").hide();
 }
@@ -146,4 +170,5 @@ $(document).ready(function () {
   loadDesc();
   loadProb2();
   loadProb4();
+  loadProb5();
 })

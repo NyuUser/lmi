@@ -97,6 +97,19 @@
     <table id="prob4">
         <!-- Table content will be populated dynamically using jQuery -->
     </table>
+
+    <form id="addProb5">
+        <h3>Add a For Problem 5</h3>
+        <label>field1: </label><input id="field1" type="text" name="field1" required><br>
+        <label>field2: </label><input id="field2" type="text" name="field2" required><br>
+        <label>field3: </label><input id="field3" type="text" name="field3" required><br>
+        <input name="add" value="Add" onclick="addProb5()">
+    </form>
+
+    <h3>Problem 5</h3>
+    <table id="prob5">
+        <!-- Table content will be populated dynamically using jQuery -->
+    </table>
 </body>
 
 </html>
